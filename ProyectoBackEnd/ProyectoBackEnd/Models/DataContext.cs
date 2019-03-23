@@ -9,6 +9,6 @@ using System.Data.Entity;
 
         }
 
-        public System.Data.Entity.DbSet<ProyectoBackEnd.Models.Producto> Productoes { get; set; }
+        public System.Data.Entity.DbSet<ProyectoBackEnd.Models.Product> Productoes { get; set; }
     }
 }

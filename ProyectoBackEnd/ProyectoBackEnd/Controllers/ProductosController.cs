@@ -27,7 +27,7 @@ namespace ProyectoBackEnd.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Producto producto = db.Productoes.Find(id);
+            Product producto = db.Productoes.Find(id);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -46,7 +46,7 @@ namespace ProyectoBackEnd.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ProductoID,Nombre,Precio")] Producto producto)
+        public ActionResult Create([Bind(Include = "ProductoID,Nombre,Precio")] Product producto)
         {
             if (ModelState.IsValid)
             {
@@ -65,7 +65,7 @@ namespace ProyectoBackEnd.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Producto producto = db.Productoes.Find(id);
+            Product producto = db.Productoes.Find(id);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -78,7 +78,7 @@ namespace ProyectoBackEnd.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ProductoID,Nombre,Precio")] Producto producto)
+        public ActionResult Edit([Bind(Include = "ProductoID,Nombre,Precio")] Product producto)
         {
             if (ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace ProyectoBackEnd.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Producto producto = db.Productoes.Find(id);
+            Product producto = db.Productoes.Find(id);
             if (producto == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace ProyectoBackEnd.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Producto producto = db.Productoes.Find(id);
+            Product producto = db.Productoes.Find(id);
             db.Productoes.Remove(producto);
             db.SaveChanges();
             return RedirectToAction("Index");
